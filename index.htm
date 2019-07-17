@@ -2,60 +2,67 @@
 <html lang="en">
 
 <head>
-  <title>CSS HW2</title>
+  <title>Bài Tập TTS Front End </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     * {
       box-sizing: border-box;
-      padding: 5px;
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      margin: 0;
-    }
-
-    /* Style the header */
+    
     header {
       background-color: LightGray;
-      padding: 30 px;
+      padding: 20 px;
       text-align: center;
       font-size: 35px;
       color: black;
       margin: 0;
     }
 
-    h2 {
+    h1 {
       margin: 0;
     }
 
-
-
-    /* Create two columns/boxes that floats next to each other *
-
-/* Style the list inside the menu */
-    ul {
-      list-style-type: none;
-      margin: 0;
+    .menu {
       float: left;
       width: 200px;
-      background-color: LightGray;
-      padding-inline-start: 75px;
+      text-align: center;
     }
 
-    article {
-      float: left;
-      width: calc(100% - 400px);
-      background-color: #f1f1f1;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, 250px);
-      grid-gap: 1em;
-
-    }
-
-    .img {
+    .menu a {
+      background-color: #e5e5e5;
+      padding: 8px;
+      margin-top: 7px;
+      display: block;
       width: 100%;
+      color: black;
+    }
+
+    .main {
+      float: left;
+      width: calc(100% - 420px);
+      padding: 10px;
+      /* display: grid;
+      grid-template-columns: repeat(auto-fill, 250px);
+      grid-gap: 1em; */
+
+      display: flex;
+      flex-wrap: wrap;
+      /* justify-content: space-between; */
+
+
+      background-color: #eeeeee;
+      margin: 10px;
+    }
+
+    .right {
+      background-color: #e5e5e5;
+      float: left;
+      width: 200px;
+      padding: 15px;
+      margin-top: 7px;
+      text-align: center;
     }
 
     /* Clear floats after the columns */
@@ -65,18 +72,28 @@
       clear: both;
     }
 
-    article2 {
-      float: left;
-      width: 200px;
-      background-color:rgba(133, 124, 124, 0.603)
-    }
-
     a {
       display: inline-block;
     }
 
     img {
-      width: 100%
+      width: 100%;
+      height: 100%;
+    }
+
+    .movie_list{
+      /* width: 100%; */
+      width: 200px;
+      margin-left: 10px;
+
+    }
+    
+    .movie_title{
+    display: inline-block;
+    text-overflow: clip;
+    word-break: break-all;
+    height: 56px;
+    overflow: hidden;
     }
 
     /* Style the footer */
@@ -85,27 +102,16 @@
       padding: 10px;
       text-align: center;
       color: red;
+      font-size: 20px;
     }
 
-    span.movie_title {
-  font-weight: bold;
-}
+    @media only screen and (max-width:620px) {
 
-  h1 {
-    text-align: center;
-  }
-
-  p {
-    text-align: center;
-  }
-
-    /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-    @media (max-width: 620px) {
-
-      nav,
-      article {
+      /* For mobile phones: */
+      .menu,
+      .main,
+      .right {
         width: 100%;
-        height: auto;
       }
     }
   </style>
@@ -113,22 +119,20 @@
 
 <body>
   <header>
-    <h2>Hello World</h2>
+    <h1>Hello World</h1>
   </header>
 
   <section>
-    <ul>
-      <li><a href="#">Link 1</div></a></li>
-      <br>
-      <li><a href="#">Link 2</div></a></li>
-      <br>
-      <li><a href="#">Link 3</div></a></li>
-      <br>
-      <li><a href="#">Link 4</div></a></li>
-      <br>
-    </ul>
 
-    <article>
+  <div style="overflow:auto">
+    <div class="menu">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+      <a href="#">Link 4</a>
+    </div>
+
+    <div class="main">
 
       <div class="movie_list" style=text-align:center>
         <a href="https://www.w3schools.com">
@@ -158,45 +162,62 @@
         </a>
       </div>
       <div class="movie_list" style=text-align:center>
-          <a href="https://www.w3schools.com">
-            <img src="boruto.jpg" alt="" class="alt_image" />
-            <span class="movie_title">Phim 5</span>
-          </a>
-        </div>
-  
-        <div class="movie_list" style=text-align:center>
-          <a href="https://www.w3schools.com">
-            <img src="rim.jpg" alt="" class="alt_image" />
-            <span class="movie_title">Phim 6</span>
-          </a>
-        </div>
-  
-        <div class="movie_list" style=text-align:center>
-          <a href="https://www.w3schools.com">
-            <img src="opm.jpg" alt="" class="alt_image" />
-            <span class="movie_title">Phim 7</span>
-          </a>
-        </div>
-  
-        <div class="movie_list" style=text-align:center>
-          <a href="https://www.w3schools.com">
-            <img src="avger.jpg" alt="" class="alt_image" />
-            <span class="movie_title">Phim 8</span>
-          </a>
-    </article>
+        <a href="https://www.w3schools.com">
+          <img src="boruto.jpg" alt="" class="alt_image" />
+          <span class="movie_title">Phim 5</span>
+        </a>
+      </div>
 
-    <article2>
+      <div class="movie_list" style=text-align:center>
+        <a href="https://www.w3schools.com">
+          <img src="rim.jpg" alt="" class="alt_image" />
+          <span class="movie_title">Phim 6</span>
+        </a>
+      </div>
+
+      <div class="movie_list" style=text-align:center>
+        <a href="https://www.w3schools.com">
+          <img src="opm.jpg" alt="" class="alt_image" />
+          <span class="movie_title">Phim 7</span>
+        </a>
+      </div>
+
+      <div class="movie_list" style=text-align:center>
+        <a href="https://www.w3schools.com">
+          <img src="avger.jpg" alt="" class="alt_image" />
+          <span class="movie_title">Phim 8</span>
+        </a>
+      </div>
+
+      <div class="movie_list" style=text-align:center>
+        <a href="https://www.w3schools.com">
+          <img src="aladin.jpg" alt="" class="alt_image" />
+          <span class="movie_title">Phim 9</span>
+        </a>
+      </div>
+
+      <div class="movie_list" style=text-align:center>
+        <a href="https://www.w3schools.com">
+          <img src="deadpool.jpg" alt="" class="alt_image" />
+          <span class="movie_title">Phim 10</span>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="right">
 
       <h1>About</h1>
-      <p>This is just a demo website for my second CSS assignment.</p>
+      <p>This is just a demo website for my internship assignment.</p>
 
-    </article2>
 
-  </section>
+    </div>
 
-  <footer>
-    <p>Footer</p>
-  </footer>
+    </section>
+
+    <footer>
+      <p>Footer</p>
+    </footer>
 
 </body>
 
